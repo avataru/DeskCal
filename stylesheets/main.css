@@ -1,0 +1,96 @@
+/*
+	html5doctor.com Reset Stylesheet v1.6.1
+	Last Updated: 2010-09-17
+	Author: Richard Clark - http://richclarkdesign.com
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+body { line-height: 1; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+nav ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+ins { background-color: #ffff99; color: black; text-decoration: none; }
+
+mark { background-color: #ffff99; color: black; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+/* Main application styles */
+body { background-color: #ddd; }
+
+h1, h2 { font-family: 'Open Sans', sans-serif; font-weight: 300; }
+
+h1 { font-size: 100px; border-bottom: 2px solid #c8cdc9; text-transform: uppercase; color: #c8cdc9; margin-bottom: 30px; }
+
+h2 { color: #000; font-size: 20px; margin-top: 236px; font-weight: 400; }
+h2 strong { font-weight: 700; }
+
+.wrapper { margin: 0 auto; width: 1524px; }
+
+.week { position: relative; width: 200px; height: 200px; border: 2px solid #fff; -moz-border-radius: 102px; -webkit-border-radius: 102px; -o-border-radius: 102px; -ms-border-radius: 102px; border-radius: 102px; -moz-box-shadow: 0 0 0 12px #c8cdc9; -webkit-box-shadow: 0 0 0 12px #c8cdc9; -o-box-shadow: 0 0 0 12px #c8cdc9; -ms-box-shadow: 0 0 0 12px #c8cdc9; box-shadow: 0 0 0 12px #c8cdc9; margin: 12px; float: left; margin-left: 25px; margin-right: 25px; text-align: center; }
+
+.day { position: absolute; width: 200px; height: 200px; clip: rect(0px, 200px, 200px, 100px); }
+.day .slice { position: absolute; width: 200px; height: 200px; color: #FFF; clip: rect(0px, 100px, 200px, 0px); -moz-border-radius: 100px; -webkit-border-radius: 100px; -o-border-radius: 100px; -ms-border-radius: 100px; border-radius: 100px; -moz-transform: rotate(77.143deg); -webkit-transform: rotate(77.143deg); -o-transform: rotate(77.143deg); -ms-transform: rotate(77.143deg); transform: rotate(77.143deg); }
+.day .name, .day .number { position: absolute; text-align: center; font-size: 16.667px; font-family: 'Open Sans', sans-serif; }
+.day .name { width: 40px; height: 40px; line-height: 40px; color: #000; background-color: #FFF; -moz-border-radius: 20px; -webkit-border-radius: 20px; -o-border-radius: 20px; -ms-border-radius: 20px; border-radius: 20px; -moz-box-shadow: 0 0 3px 1px #999999; -webkit-box-shadow: 0 0 3px 1px #999999; -o-box-shadow: 0 0 3px 1px #999999; -ms-box-shadow: 0 0 3px 1px #999999; box-shadow: 0 0 3px 1px #999999; font-weight: 400; }
+.day .number { width: 50px; height: 50px; line-height: 50px; color: #FFF; font-weight: 700; }
+
+.day.monday { -moz-transform: rotate(180deg); -webkit-transform: rotate(180deg); -o-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg); }
+.day.monday .slice { background-color: #0167b2; }
+.day.monday .name { top: 4px; left: 115px; -moz-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); -o-transform: rotate(-180deg); -ms-transform: rotate(-180deg); transform: rotate(-180deg); }
+.day.monday .number { top: 40px; left: 91px; -moz-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); -o-transform: rotate(-180deg); -ms-transform: rotate(-180deg); transform: rotate(-180deg); }
+.day.monday.off-month .slice { background-color: #5a5a5a; }
+
+.day.tuesday { -moz-transform: rotate(231.429deg); -webkit-transform: rotate(231.429deg); -o-transform: rotate(231.429deg); -ms-transform: rotate(231.429deg); transform: rotate(231.429deg); }
+.day.tuesday .slice { background-color: #017edb; }
+.day.tuesday .name { top: 4px; left: 115px; -moz-transform: rotate(-231.429deg); -webkit-transform: rotate(-231.429deg); -o-transform: rotate(-231.429deg); -ms-transform: rotate(-231.429deg); transform: rotate(-231.429deg); }
+.day.tuesday .number { top: 40px; left: 91px; -moz-transform: rotate(-231.429deg); -webkit-transform: rotate(-231.429deg); -o-transform: rotate(-231.429deg); -ms-transform: rotate(-231.429deg); transform: rotate(-231.429deg); }
+.day.tuesday.off-month .slice { background-color: #6e6e6e; }
+
+.day.wednesday { -moz-transform: rotate(282.857deg); -webkit-transform: rotate(282.857deg); -o-transform: rotate(282.857deg); -ms-transform: rotate(282.857deg); transform: rotate(282.857deg); }
+.day.wednesday .slice { background-color: #0795fe; }
+.day.wednesday .name { top: 4px; left: 115px; -moz-transform: rotate(-282.857deg); -webkit-transform: rotate(-282.857deg); -o-transform: rotate(-282.857deg); -ms-transform: rotate(-282.857deg); transform: rotate(-282.857deg); }
+.day.wednesday .number { top: 40px; left: 91px; -moz-transform: rotate(-282.857deg); -webkit-transform: rotate(-282.857deg); -o-transform: rotate(-282.857deg); -ms-transform: rotate(-282.857deg); transform: rotate(-282.857deg); }
+.day.wednesday.off-month .slice { background-color: #828282; }
+
+.day.thursday { -moz-transform: rotate(334.286deg); -webkit-transform: rotate(334.286deg); -o-transform: rotate(334.286deg); -ms-transform: rotate(334.286deg); transform: rotate(334.286deg); }
+.day.thursday .slice { background-color: #30a6fe; }
+.day.thursday .name { top: 4px; left: 115px; -moz-transform: rotate(-334.286deg); -webkit-transform: rotate(-334.286deg); -o-transform: rotate(-334.286deg); -ms-transform: rotate(-334.286deg); transform: rotate(-334.286deg); }
+.day.thursday .number { top: 40px; left: 91px; -moz-transform: rotate(-334.286deg); -webkit-transform: rotate(-334.286deg); -o-transform: rotate(-334.286deg); -ms-transform: rotate(-334.286deg); transform: rotate(-334.286deg); }
+.day.thursday.off-month .slice { background-color: #979797; }
+
+.day.friday { -moz-transform: rotate(385.714deg); -webkit-transform: rotate(385.714deg); -o-transform: rotate(385.714deg); -ms-transform: rotate(385.714deg); transform: rotate(385.714deg); }
+.day.friday .slice { background-color: #58b8fe; }
+.day.friday .name { top: 4px; left: 115px; -moz-transform: rotate(-385.714deg); -webkit-transform: rotate(-385.714deg); -o-transform: rotate(-385.714deg); -ms-transform: rotate(-385.714deg); transform: rotate(-385.714deg); }
+.day.friday .number { top: 40px; left: 91px; -moz-transform: rotate(-385.714deg); -webkit-transform: rotate(-385.714deg); -o-transform: rotate(-385.714deg); -ms-transform: rotate(-385.714deg); transform: rotate(-385.714deg); }
+.day.friday.off-month .slice { background-color: #ababab; }
+
+.day.saturday { -moz-transform: rotate(437.143deg); -webkit-transform: rotate(437.143deg); -o-transform: rotate(437.143deg); -ms-transform: rotate(437.143deg); transform: rotate(437.143deg); }
+.day.saturday .slice { background-color: #81c9fe; }
+.day.saturday .name { top: 4px; left: 115px; -moz-transform: rotate(-437.143deg); -webkit-transform: rotate(-437.143deg); -o-transform: rotate(-437.143deg); -ms-transform: rotate(-437.143deg); transform: rotate(-437.143deg); }
+.day.saturday .number { top: 40px; left: 91px; -moz-transform: rotate(-437.143deg); -webkit-transform: rotate(-437.143deg); -o-transform: rotate(-437.143deg); -ms-transform: rotate(-437.143deg); transform: rotate(-437.143deg); }
+.day.saturday.off-month .slice { background-color: silver; }
+
+.day.sunday { -moz-transform: rotate(488.571deg); -webkit-transform: rotate(488.571deg); -o-transform: rotate(488.571deg); -ms-transform: rotate(488.571deg); transform: rotate(488.571deg); }
+.day.sunday .slice { background-color: #a9daff; -moz-transform: rotate(51.429deg); -webkit-transform: rotate(51.429deg); -o-transform: rotate(51.429deg); -ms-transform: rotate(51.429deg); transform: rotate(51.429deg); }
+.day.sunday .name { top: 4px; left: 115px; -moz-transform: rotate(-488.571deg); -webkit-transform: rotate(-488.571deg); -o-transform: rotate(-488.571deg); -ms-transform: rotate(-488.571deg); transform: rotate(-488.571deg); }
+.day.sunday .number { top: 40px; left: 91px; -moz-transform: rotate(-488.571deg); -webkit-transform: rotate(-488.571deg); -o-transform: rotate(-488.571deg); -ms-transform: rotate(-488.571deg); transform: rotate(-488.571deg); }
+.day.sunday.off-month .slice { background-color: #d4d4d4; }
+
+.day.today .slice { background-color: #df1b27; }

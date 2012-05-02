@@ -1,0 +1,181 @@
+@import 'html5-doctor-reset-stylesheet';
+
+/* Main application styles */
+
+$size: 200px;
+$outline: 12px;
+$slice-angle-value: (360 / 7);
+$slice-base-color: #0167b2;
+$slice-color-offset: 8%;
+$slice-today-color: #df1b27;
+$neutral-color: #c8cdc9;
+
+$slice-angle: $slice-angle-value * 1deg;
+
+@mixin border-radius($radius) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur, $size, $color) {
+	-moz-box-shadow: $horizontal $vertical $blur $size $color;
+	-webkit-box-shadow: $horizontal $vertical $blur $size $color;
+	-o-box-shadow: $horizontal $vertical $blur $size $color;
+	-ms-box-shadow: $horizontal $vertical $blur $size $color;
+	box-shadow: $horizontal $vertical $blur $size $color;
+}
+
+@mixin transform-rotate($degrees) {
+	-moz-transform: rotate($degrees);
+	-webkit-transform: rotate($degrees);
+	-o-transform: rotate($degrees);
+	-ms-transform: rotate($degrees);
+	transform: rotate($degrees);
+}
+
+@mixin transform-rotate-origin($degrees, $horizontal, $vertical) {
+	-moz-transform: rotate($degrees);
+	-moz-transform-origin: $horizontal $vertical;
+	-webkit-transform: rotate($degrees);
+	-webkit-transform-origin: $horizontal $vertical;
+	-o-transform: rotate($degrees);
+	-o-transform-origin: $horizontal $vertical;
+	-ms-transform: rotate($degrees);
+	-ms-transform-origin: $horizontal $vertical;
+	transform: rotate($degrees);
+	transform-origin: $horizontal $vertical;
+}
+
+body {
+	background-color: #ddd;
+}
+
+h1, h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+h1 {
+	font-size: 100px;
+	border-bottom: 2px solid $neutral-color;
+	text-transform: uppercase;
+	color: $neutral-color;
+	margin-bottom: 30px;
+}
+
+h2 {
+	color: #000;
+	font-size: 20px;
+	margin-top: $size + (3 * $outline);
+	font-weight: 400;
+
+	strong {
+		font-weight: 700;
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: (($size + $size / 4) + (2 * 2px)) * 6;
+}
+
+.month {
+}
+
+.week {
+	position: relative;
+	width: $size;
+	height: $size;
+	border: 2px solid #fff;
+	@include border-radius(($size / 2) + 2);
+	@include box-shadow(0, 0, 0, $outline, $neutral-color);
+	margin: $outline;
+	float: left;
+	margin-left: $size / 8;
+	margin-right: $size / 8;
+	text-align: center;
+}
+
+.day {
+	position: absolute;
+	width: $size;
+	height: $size;
+	clip: rect(0px, $size, $size, $size / 2);
+
+	.slice {
+		position: absolute;
+		width: $size;
+		height: $size;
+		color: #FFF;
+		clip: rect(0px, $size / 2, $size, 0px);
+		@include border-radius($size / 2);
+		@include transform-rotate($slice-angle + $slice-angle / 2);
+	}
+
+	.name, .number {
+		position: absolute;
+		text-align: center;
+		font-size: $size / 12;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.name {
+		$element-size: $size / 5;
+		width: $element-size;
+		height: $element-size;
+		line-height: $element-size;
+		color: #000;
+		background-color: #FFF;
+		@include border-radius($element-size / 2);
+		@include box-shadow(0, 0, 3px, 1px, #999);
+		font-weight: 400;
+	}
+
+	.number {
+		$element-size: $size / 4;
+		width: $element-size;
+		height: $element-size;
+		line-height: $element-size;
+		color: #FFF;
+		font-weight: 700;
+	}
+}
+
+$d: 0;
+@each $day in monday, tuesday, wednesday, thursday, friday, saturday, sunday {
+	.day.#{$day} {
+		$position: $d + 3.5;
+		@include transform-rotate($slice-angle * $position);
+
+		.slice {
+			background-color: lighten($slice-base-color, $slice-color-offset * $d);
+			@if $d == 6 {
+				@include transform-rotate($slice-angle);
+			}
+		}
+
+		.name {
+			top: 4px;
+			left: 115px;
+			@include transform-rotate(-$slice-angle * $position);
+		}
+
+		.number {
+			top: 40px;
+			left: 91px;
+			@include transform-rotate(-$slice-angle * $position);
+		}
+
+		&.off-month .slice {
+			background-color: grayscale(lighten($slice-base-color, $slice-color-offset * $d));
+		}
+	}
+	$d: $d + 1;
+}
+
+.day.today .slice {
+	background-color: $slice-today-color;
+}
