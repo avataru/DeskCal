@@ -59,7 +59,7 @@ h1, h2 {
 }
 
 h1 {
-	font-size: 100px;
+	font-size: $size / 2;
 	border-bottom: 2px solid $neutral-color;
 	text-transform: uppercase;
 	color: $neutral-color;
@@ -68,7 +68,7 @@ h1 {
 
 h2 {
 	color: #000;
-	font-size: 20px;
+	font-size: $size / 10;
 	margin-top: $size + (3 * $outline);
 	font-weight: 400;
 
@@ -77,12 +77,14 @@ h2 {
 	}
 }
 
-.wrapper {
+.wrapper, footer {
+	position: relative;
 	margin: 0 auto;
 	width: (($size + $size / 4) + (2 * 2px)) * 6;
 }
 
 .month {
+	margin-bottom: $size * 1.75;
 }
 
 .week {
@@ -178,4 +180,44 @@ $d: 0;
 
 .day.today .slice {
 	background-color: $slice-today-color;
+}
+
+nav {
+	font-size: $size / 5;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	a {
+		color: $neutral-color;
+		text-decoration: none;
+
+		&:hover {
+			color: $slice-base-color;
+		}
+	}
+}
+
+footer {
+	clear: both;
+	text-align: center;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	line-height: 14px;
+	border-top: 1px solid $neutral-color;
+	margin-top: 10px;
+	padding-top: 10px;
+
+	a {
+		color: $slice-base-color;
+		text-decoration: none;
+
+		&:hover {
+			color: $slice-today-color;
+			text-decoration: underline;
+		}
+	}
 }

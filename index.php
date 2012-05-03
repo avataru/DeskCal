@@ -62,7 +62,14 @@ $requestYear = (isset($_GET['year'])) ? $_GET['year'] : date('Y');
 // Prepare the calendar data
 
 $timestamp = mktime(0, 0, 0, $requestMonth, 1, $requestYear);
+
 $month['name'] = date('F', $timestamp) . ' ' . $requestYear;
+
+$previousMonth = strtotime(date('Y-m-d', $timestamp) . ' - 1 month');
+$month['previous'] = array('year' => date('Y', $previousMonth), 'month' => date('n', $previousMonth));
+$nextMonth = strtotime(date('Y-m-d', $timestamp) . ' + 1 month');
+$month['next'] = array('year' => date('Y', $nextMonth), 'month' => date('n', $nextMonth));
+
 $week = (int) date('W', $timestamp);
 
 for ($w = 1; $w <= 6; $w++)

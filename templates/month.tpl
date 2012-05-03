@@ -16,6 +16,11 @@
     <div class="wrapper">
     	<div class="month">
             <h1>{$month.name}</h1>
+            <nav>
+                <a href="?year={$month.previous.year}&month={$month.previous.month}">&lt;</a>
+                <a href="?">&bull;</a>
+                <a href="?year={$month.next.year}&month={$month.next.month}">&gt;</a>
+            </nav>
 {foreach $month.weeks as $week}
             <div class="week">
     {foreach $week.days as $day}
@@ -30,5 +35,12 @@
 {/foreach}
         </div>
     </div>
+    <footer>
+        Source on <a href="https://github.com/avataru/DeskCal">GitHub</a> (<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>).
+        Best viewed in Mozilla Firefox @1680&times;1050.
+        Created by <a href="http://mihai.zaharie.ro">Mihai Zaharie</a>.
+        Inspired by Sherif Saleh's <a href="http://mondedesign.net/fond-decran-mai-2012/">May calendar</a>.
+        Calendar icon made by <a href="http://wilsoninc.deviantart.com/art/Green-and-blue-104029981">Juan G&oacute;mez</a>.
+    </footer>
 </body>
 </html>

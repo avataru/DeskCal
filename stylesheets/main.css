@@ -41,7 +41,9 @@ h1 { font-size: 100px; border-bottom: 2px solid #c8cdc9; text-transform: upperca
 h2 { color: #000; font-size: 20px; margin-top: 236px; font-weight: 400; }
 h2 strong { font-weight: 700; }
 
-.wrapper { margin: 0 auto; width: 1524px; }
+.wrapper, footer { position: relative; margin: 0 auto; width: 1524px; }
+
+.month { margin-bottom: 350px; }
 
 .week { position: relative; width: 200px; height: 200px; border: 2px solid #fff; -moz-border-radius: 102px; -webkit-border-radius: 102px; -o-border-radius: 102px; -ms-border-radius: 102px; border-radius: 102px; -moz-box-shadow: 0 0 0 12px #c8cdc9; -webkit-box-shadow: 0 0 0 12px #c8cdc9; -o-box-shadow: 0 0 0 12px #c8cdc9; -ms-box-shadow: 0 0 0 12px #c8cdc9; box-shadow: 0 0 0 12px #c8cdc9; margin: 12px; float: left; margin-left: 25px; margin-right: 25px; text-align: center; }
 
@@ -94,3 +96,11 @@ h2 strong { font-weight: 700; }
 .day.sunday.off-month .slice { background-color: #d4d4d4; }
 
 .day.today .slice { background-color: #df1b27; }
+
+nav { font-size: 40px; font-family: 'Open Sans', sans-serif; font-weight: 700; position: absolute; right: 0; bottom: 0; }
+nav a { color: #c8cdc9; text-decoration: none; }
+nav a:hover { color: #0167b2; }
+
+footer { clear: both; text-align: center; font-size: 12px; font-family: 'Open Sans', sans-serif; font-weight: 300; line-height: 14px; border-top: 1px solid #c8cdc9; margin-top: 10px; padding-top: 10px; }
+footer a { color: #0167b2; text-decoration: none; }
+footer a:hover { color: #df1b27; text-decoration: underline; }
