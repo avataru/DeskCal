@@ -96,4 +96,3 @@ for ($w = 1; $w <= 6; $w++)
 
 $smarty->assign('month', $month);
 $smarty->display('month.tpl');
-// echo '<pre>'; print_r($month); echo '</pre>';
