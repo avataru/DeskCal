@@ -14,8 +14,11 @@
  * Settings
  */
 
-$appTimezone    = 'Europe/Bucharest';
-$debug 			= false;
+$debug = false;
+
+$settings = array(
+	'timezone' => 'Europe/Bucharest'
+);
 
 /**
  * Paths
@@ -34,7 +37,7 @@ define('TEMPLATES_CACHED_DIR', 'cache/templates/cached');
 
 // Set the localization
 
-date_default_timezone_set($appTimezone);
+date_default_timezone_set($settings['timezone']);
 
 // Load and setup Smarty
 
